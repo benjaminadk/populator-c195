@@ -201,7 +201,14 @@ server.post('/api/tables', (req, res) => {
       res.status(200).json(results)
     })
   }
-
+  else if(index === 3) {
+    connection.query(`SELECT appointment.appointmentId, customer.customerName, appointment.title, appointment.description, appointment.start, appointment.end, appointment.contact 
+                      FROM appointment
+                      INNER JOIN customer ON appointment.customerId = customer.customerId`, (error, results, fields) => {
+    if(error) throw error
+    res.status(200).json(results)
+    })
+  }
   
   connection.end(err => {
     if(err) console.error('Error Ending Connection: ' + err.stack)

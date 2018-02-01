@@ -59,6 +59,18 @@ export default class Tables extends Component {
           header7: null
       })
     }
+    else if(this.state.select === 3) {
+      this.setState({
+        tableTitle: 'Appointment Data',
+        header1: 'Apt ID',
+        header2: 'Customer Name',
+        header3: 'Title',
+        header4: 'Description',
+        header5: 'Start',
+        header6: 'End',
+        header7: 'Contact'
+      })
+    }
     this.setState({ data: response.data })
   }
   
@@ -129,6 +141,19 @@ export default class Tables extends Component {
                     <TableRowColumn>{d.userId}</TableRowColumn>
                     <TableRowColumn>{d.userName}</TableRowColumn>
                     <TableRowColumn>{d.password}</TableRowColumn>
+                  </TableRow>
+                )
+              }
+              else if(select === 3) {
+                return(
+                  <TableRow key={d.appointmentId}>
+                    <TableRowColumn style={{ width: '1vw'}}>{d.appointmentId}</TableRowColumn>
+                    <TableRowColumn>{d.customerName}</TableRowColumn>
+                    <TableRowColumn>{d.title}</TableRowColumn>
+                    <TableRowColumn>{d.description}</TableRowColumn>
+                    <TableRowColumn>{d.start}</TableRowColumn>
+                    <TableRowColumn>{d.end}</TableRowColumn>
+                    <TableRowColumn>{d.contact}</TableRowColumn>
                   </TableRow>
                 )
               }
