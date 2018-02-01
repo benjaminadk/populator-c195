@@ -1,0 +1,16 @@
+#tablesContainer {
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+#controls {
+    border-right: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 85vh;
+}
+
+#table {
+    
+}
