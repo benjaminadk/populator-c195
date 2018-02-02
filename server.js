@@ -42,6 +42,12 @@ server.post('/api/populate', (req, res) => {
   connection.query('TRUNCATE TABLE customer')
   connection.query('TRUNCATE TABLE appointment')
   
+  connection.query('ALTER TABLE country CHANGE COLUMN countryId countryId INT(10) NOT NULL AUTO_INCREMENT')
+  connection.query('ALTER TABLE city CHANGE COLUMN cityId cityId INT(10) NOT NULL AUTO_INCREMENT')
+  connection.query('ALTER TABLE address CHANGE COLUMN addressId addressId INT(10) NOT NULL AUTO_INCREMENT')
+  connection.query('ALTER TABLE customer CHANGE COLUMN customerId customerId INT(10) NOT NULL AUTO_INCREMENT')
+  connection.query('ALTER TABLE appointment CHANGE COLUMN appointmentId appointmentId INT(10) NOT NULL AUTO_INCREMENT')
+  
   const countries = ['United States', 'England']
     
   countries.forEach(c => {
@@ -145,6 +151,7 @@ server.post('/api/add-user', (req, res) => {
   })
   
   let obj = { userName: createUsername, password: createPassword }
+  connection.query('ALTER TABLE user CHANGE COLUMN userId userId INT(11) NOT NULL AUTO_INCREMENT')
   connection.query('INSERT INTO user SET ?', obj, (error, results, fields) => {
     if(error) throw error
     res.status(200).json({ message: 'user added' })
