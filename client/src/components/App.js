@@ -88,6 +88,7 @@ class App extends Component {
                       Get Connection String.  Values will appear. These values correspond to the Connection Information
                       form on this page. Copy and Paste the values to the Populator form. Click the Store Connection 
                       Parameters Button to save your Connection Parameters to Local Storage for use throughout the site.
+                      Your private data is never stored anywhere except in your own Local Storage.
                   </p>
                   {this.renderStepActions(0)}
                 </StepContent>
@@ -97,10 +98,9 @@ class App extends Component {
                 <StepContent>
                   <p>
                     Instead of Auto Populating Users you can create and add your own.  Fill in the UserName and Password
-                    Text Fields in the middle form.  Be sure to write down or have access to this data since this will be
-                    needed for the Log In screen of your Java Project.  Click the Add User Button. Add as many Users as
-                    desired.  I found 3 to be a good number since there are 3 branch offices. As of right now, you must 
-                    have at least 3 Users to populate, and if you have more only the first 3 will be used in populating.
+                    Text Fields in the middle form. Click the Add User Button. Add as many Users as you want.
+                    I found 3 to be a good number since there are 3 branch offices. As of right now, you must 
+                    have at least 3 Users for Populator to work. If you have more only the first 3 will be used in populating.
                   </p>
                   {this.renderStepActions(1)}
                 </StepContent>
@@ -112,7 +112,7 @@ class App extends Component {
                     I think it is important that Users are created and that they are available when Appoinments are Auto 
                     Populated.  The userName of the User can be listed as the contact and will make report generation easier
                     in the future. To assure User creation and availability click the Fetch User Name Button. A list should
-                    appear in the middle column and the Populate Button should now be enabled.
+                    appear and the Populate Button should now be enabled.
                   </p>
                   {this.renderStepActions(2)}
                 </StepContent>
@@ -121,11 +121,12 @@ class App extends Component {
                 <StepLabel>Populate Your Database</StepLabel>
                 <StepContent>
                   <p>
-                    Simply click the Populate Button and be patient.  This should automatically generate fake data and populate 
-                    your database. The follow amounts of data are inserted: 2 countries, 10 cities, 100 addresses, 100 customers 
+                    Simply click the Populate Button.  This should automatically generate fake data and populate 
+                    your database. The following amounts of data are inserted: 2 countries, 10 cities, 100 addresses, 100 customers 
                     and 300 appointments. Data is structured such that the 100 customers are split between the 3 branch offices. 30 
                     to New York, 30 to Phoenix and 40 to London, based on proximity of the customer to that branch.  Three 
-                    appoinments will be given to each customer, including an introduction and two consulting appoinments. 
+                    appoinments will be given to each customer, including an introduction and two consulting appoinments. All data
+                    is cleared before population and Auto Increment is activated for the relevant id properties.
                   </p>
                   {this.renderStepActions(3)}
                 </StepContent>
@@ -134,8 +135,8 @@ class App extends Component {
                 <StepLabel>Check the Results</StepLabel>
                 <StepContent>
                   <p>
-                    Generating the data takes a little while. A snackbar will eventually show up telling you that the database 
-                    population process is complete. There will also be a time is seconds. Data is viewable by clicking the Table 
+                    A snackbar will eventually show up telling you that the database population process is complete. 
+                    There will also be a time is seconds. Data is viewable by clicking the Table 
                     View Button. A more thorough solution is to download MySQL Workbench a view your data there.
                   </p>
                   {this.renderStepActions(4)}
