@@ -6,7 +6,8 @@
   "scripts": {
     "server": "nodemon ./server.js --exec babel-node -e js",
     "client": "npm run start --prefix client",
-    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "start:dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "nodemon ./server.js --exec babel-node -e js",
     "test": "nodemon ./test.js --exec babel-node -e js"
   },
   "keywords": [],
