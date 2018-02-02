@@ -7,7 +7,7 @@
     "server": "nodemon ./server.js --exec babel-node -e js",
     "client": "npm run start --prefix client",
     "start:dev": "concurrently \"npm run server\" \"npm run client\"",
-    "start": "nodemon ./server.js --exec babel-node -e js",
+    "start": "node server.js",
     "test": "nodemon ./test.js --exec babel-node -e js"
   },
   "keywords": [],
