@@ -3,12 +3,15 @@ import mysql from 'mysql'
 import bodyParser from 'body-parser'
 import Chance from 'chance'
 import moment from 'moment'
+import path from 'path'
 
 const server = express()
 const chance = new Chance()
 const PORT = 8081
 
 server.use(bodyParser.json())
+
+server.use(express.static(path.join(__dirname, 'client/build')))
 
 // POST ROUTES
 // MAIN POPULATE ROUTE 
@@ -215,5 +218,9 @@ server.post('/api/tables', (req, res) => {
     console.log('Connection Terminated')
   })
 })
+
+server.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/client/build/index.html'));
+});
 
 server.listen(PORT, () => console.log(`SERVER LISTENING ON PORT ${PORT}`))
