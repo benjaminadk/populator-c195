@@ -22,8 +22,8 @@ server.use(express.static(path.join(__dirname, 'client/build')))
 // POST ROUTES
 // MAIN POPULATE ROUTE 
 server.post('/api/populate', (req, res) => {
-  var count = 0
-  var counter = setInterval(() => count++, 1000)
+  var timer = 0
+  var counter = setInterval(() => timer++, 1000)
   
   const { host, user, password, database, users } = req.body
   const connection = mysql.createConnection({ host, user, password, database })
@@ -127,7 +127,7 @@ server.post('/api/populate', (req, res) => {
     if(err) console.error('Error Ending Connection: ' + err.stack)
     console.log('Connection Terminated')
     clearInterval(counter)
-    res.status(200).json(count)
+    res.status(200).json(timer)
   })
 })
 
