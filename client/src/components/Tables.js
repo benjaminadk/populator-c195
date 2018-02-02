@@ -147,7 +147,7 @@ export default class Tables extends Component {
               else if(select === 3) {
                 return(
                   <TableRow key={d.appointmentId}>
-                    <TableRowColumn style={{ width: '1vw'}}>{d.appointmentId}</TableRowColumn>
+                    <TableRowColumn>{d.appointmentId}</TableRowColumn>
                     <TableRowColumn>{d.customerName}</TableRowColumn>
                     <TableRowColumn>{d.title}</TableRowColumn>
                     <TableRowColumn>{d.description}</TableRowColumn>
