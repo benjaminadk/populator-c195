@@ -97,7 +97,7 @@ class App extends Component {
                 <StepLabel>Add User to Database</StepLabel>
                 <StepContent>
                   <p>
-                    Instead of Auto Populating Users you can create and add your own.  Fill in the UserName and Password
+                    Instead of Auto Populating Users you can create and add your own. Fill in the UserName and Password
                     Text Fields in the middle form. Click the Add User Button. Add as many Users as you want.
                     I found 3 to be a good number since there are 3 branch offices. As of right now, you must 
                     have at least 3 Users for Populator to work. If you have more only the first 3 will be used in populating.
@@ -153,7 +153,11 @@ class App extends Component {
                 <br/>
                 <li>
                   I made this first version of Populator C195 in a few hours, and as a result there is not much in the way of 
-                  validation for the forms, or any error handling on the frontend for that matter. Sorry.
+                  validation for the forms, or any error handling on the frontend for that matter. Sorry.  Appoinments are each
+                  one hour long and should begin on the current date for each branch. Office hours are 9-5 with the last appointment
+                  starting at 4.  All times are UTC with the appropriate adjustment for Feb 1.  I am still learning amount times, 
+                  but it is my understanding that a locales variance from UTC can change with daylight savings.  For example, the 
+                  New York times are 5 hours ahead when converted to UTC. A 9:00 am appoinment is 14:00:00 UTC.
                 </li>
                 <br/>
                 <li>
